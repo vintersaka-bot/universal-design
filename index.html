@@ -1,0 +1,55 @@
+<section id="works">
+ <div class="heading">
+  <h2>Bizning uslublar</h2>
+  <p>Har bir loyiha o‘ziga xos</p>
+ </div>
+ <div class="samples">
+  <div class="sample"><small>SOCIAL MEDIA</small><strong>Modern Design</strong></div>
+  <div class="sample"><small>GAMING</small><strong>Gaming Style</strong></div>
+  <div class="sample"><small>BRANDING</small><strong>Premium Design</strong></div>
+ </div>
+</section>
+
+<section id="order">
+ <div class="heading">
+  <h2>Buyurtma berish</h2>
+  <p>O‘z g‘oyangizni bizga yozing</p>
+ </div>
+ <form class="order" id="orderForm">
+  <label>Ismingiz</label>
+  <input id="name" required placeholder="Ismingizni yozing">
+  <label>Dizayn turi</label>
+  <select id="type">
+   <option>Instagram dizayni</option>
+   <option>Telegram dizayni</option>
+   <option>YouTube dizayni</option>
+   <option>Logo va brending</option>
+   <option>Reklama dizayni</option>
+   <option>Gaming dizayn</option>
+   <option>Boshqa</option>
+  </select>
+  <label>Buyurtma tafsilotlari</label>
+  <textarea id="details" required placeholder="Qanday dizayn kerak?"></textarea>
+  <button class="btn" type="submit">Buyurtma matnini nusxalash</button>
+ </form>
+</section>
+
+<footer>
+ © 2026 UNIVERSAL DESIGN. Barcha huquqlar himoyalangan.
+</footer>
+
+<script>
+document.getElementById("orderForm").addEventListener("submit",async function(e){
+ e.preventDefault();
+ const msg="Ism: "+document.getElementById("name").value+
+ "\nDizayn: "+document.getElementById("type").value+
+ "\nTafsilot: "+document.getElementById("details").value;
+ try{
+  await navigator.clipboard.writeText(msg);
+  alert("Buyurtma matni nusxalandi!");
+ }catch(err){alert(msg);}
+});
+</script>
+
+</body>
+</html>
